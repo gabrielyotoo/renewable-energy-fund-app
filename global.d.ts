@@ -1,5 +1,5 @@
 import 'i18next';
-import ptbr from '@app/i18n/enus';
+import enus from '@app/i18n/enus';
 import { mainTheme } from '@app/theme';
 
 declare module '@react-navigation/native' {
@@ -9,10 +9,10 @@ declare module '@react-navigation/native' {
 
 declare module 'i18next' {
   interface CustomTypeOptions {
-    defaultNS: 'pt-BR';
+    defaultNS: 'en-US';
     // custom resources type
     resources: {
-      'pt-BR': typeof ptbr;
+      'en-US': typeof enus;
     };
   }
 }
