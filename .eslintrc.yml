@@ -1,0 +1,38 @@
+env:
+  browser: true
+  es2021: true
+root: true
+extends:
+  - '@gabrielyotoo/eslint-config-react-native'
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+  project: ./tsconfig.json
+ignorePatterns: [babel.config.js]
+plugins:
+  - '@typescript-eslint'
+  - react
+  - eslint-plugin-react-hooks
+settings:
+  react:
+    createClass: createReactClass
+    pragma: React
+    fragment: Fragment
+    version: detect
+rules:
+  'import/order':
+    [
+      'error',
+      {
+        pathGroups:
+          [
+            { pattern: '@app/**', group: 'internal', position: 'after' },
+            { pattern: '@screens/**', group: 'internal' },
+          ],
+        groups: [['external', 'builtin'], 'internal', 'parent', 'sibling'],
+        'newlines-between': 'always',
+        pathGroupsExcludedImportTypes: ['internal'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ]
