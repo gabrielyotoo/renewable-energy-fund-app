@@ -27,8 +27,9 @@ rules:
       {
         pathGroups:
           [
-            { pattern: '@app/**', group: 'internal', position: 'after' },
+            { pattern: '@app/**', group: 'internal' },
             { pattern: '@screens/**', group: 'internal' },
+            { pattern: '@components/**', group: 'internal' },
           ],
         groups: [['external', 'builtin'], 'internal', 'parent', 'sibling'],
         'newlines-between': 'always',
