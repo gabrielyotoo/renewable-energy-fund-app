@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  text: {
-    padding: 0,
-    margin: 0,
-    letterSpacing: -0.6,
+  button: {
+    paddingVertical: 25,
+    borderRadius: 5,
+    alignItems: 'center',
   },
 });

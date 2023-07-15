@@ -30,11 +30,7 @@ const App = () => {
   }
 
   return (
-    <SafeAreaProvider
-      onLayout={() => {
-        onLayoutRootView().catch((_) => {});
-      }}
-    >
+    <SafeAreaProvider onLayout={onLayoutRootView}>
       <NavigationContainer theme={mainTheme}>
         <MainNavigator />
       </NavigationContainer>

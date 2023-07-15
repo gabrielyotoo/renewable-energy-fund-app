@@ -5,9 +5,9 @@
     "jsx": "react-native",
     "baseUrl": "./src",
     "paths": {
-      "@app/*": ["./*"],
       "@components/*": ["./components/*"],
-      "@screens/*": ["./screens/*"]
+      "@screens/*": ["./screens/*"],
+      "@app/*": ["./*"]
     }
   }
 }

@@ -5,6 +5,6 @@ export default StyleSheet.create({
     paddingVertical: 30,
   },
   separator: {
-    height: 1,
+    height: 2,
   },
 });
