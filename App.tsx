@@ -4,6 +4,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { mainTheme } from '@app/theme';
+
 import MontserratBold from './assets/fonts/montserrat/Montserrat-Bold.ttf';
 import MontserratMedium from './assets/fonts/montserrat/Montserrat-Medium.ttf';
 import MainNavigator from './src/main-navigator';
@@ -32,7 +34,7 @@ const App = () => {
         onLayoutRootView().catch((_) => {});
       }}
     >
-      <NavigationContainer>
+      <NavigationContainer theme={mainTheme}>
         <MainNavigator />
       </NavigationContainer>
     </SafeAreaProvider>
