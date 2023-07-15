@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import '@app/i18n/config';
 import { mainTheme } from '@app/theme';
 
 import MontserratBold from './assets/fonts/montserrat/Montserrat-Bold.ttf';
