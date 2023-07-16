@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
   chart: {
-    height: 200,
+    height: 160,
     width: Dimensions.get('window').width,
     marginTop: 10,
   },
