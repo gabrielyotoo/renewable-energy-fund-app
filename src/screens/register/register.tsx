@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import { MainStackParamList } from '@app/main-navigator';
+import { MainStackParamList } from '@app/routes/main-navigator';
 import Button from '@components/button';
 import Radio from '@components/radio';
 import Text from '@components/text';
@@ -46,7 +46,7 @@ const Register = ({ navigation }: RegisterProps) => {
 
   const handleRegister = handleSubmit(() => {
     reset();
-    navigation.reset({ routes: [{ name: 'Home' }] });
+    navigation.reset({ routes: [{ name: 'HomeTabBar' }] });
   });
 
   return (

@@ -6,11 +6,11 @@ import { useCallback } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import '@app/i18n/config';
+import MainNavigator from '@app/routes/main-navigator';
 import { mainTheme } from '@app/theme';
 
-import MontserratBold from './assets/fonts/montserrat/Montserrat-Bold.ttf';
-import MontserratMedium from './assets/fonts/montserrat/Montserrat-Medium.ttf';
-import MainNavigator from './src/main-navigator';
+import MontserratBold from '@assets/fonts/montserrat/Montserrat-Bold.ttf';
+import MontserratMedium from '@assets/fonts/montserrat/Montserrat-Medium.ttf';
 
 SplashScreen.preventAutoHideAsync().catch((_) => {});
 

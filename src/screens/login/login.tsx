@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import { MainStackParamList } from '@app/main-navigator';
+import { MainStackParamList } from '@app/routes/main-navigator';
 import Button from '@components/button';
 import Text from '@components/text';
 import TextInput from '@components/text-input';
@@ -38,7 +38,9 @@ const Login = ({ navigation }: LoginProps) => {
 
   const handleLogin = handleSubmit(() => {
     reset();
-    navigation.replace('Home');
+    navigation.replace('HomeTabBar', {
+      screen: 'Home',
+    });
   });
 
   const handleSignUp = () => {

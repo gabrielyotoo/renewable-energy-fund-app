@@ -10,6 +10,11 @@ export default {
       portfolio: 'Portfolio',
       earn: 'Earn rewards',
     },
+    tabBar: {
+      home: 'Home',
+      trade: 'Trade',
+      portfolio: 'Portfolio',
+    },
   },
   screens: {
     login: {
