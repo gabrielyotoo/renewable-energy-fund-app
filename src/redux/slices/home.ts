@@ -1,7 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+import * as homeApi from '@app/api/home';
 import { FundPreview } from '@app/models/fund';
+
+export const fetchFunds = createAsyncThunk(
+  'home/fetchFunds',
+  async () => await homeApi.getFundsPreview()
+);
 
 interface HomeState {
   funds: FundPreview[];
@@ -16,19 +21,19 @@ const initialState: HomeState = {
 export const homeSlice = createSlice({
   name: 'home',
   initialState,
-  reducers: {
-    addFund: (state, action: PayloadAction<FundPreview>) => {
-      state.funds = [...state.funds, action.payload];
-    },
-    setFunds: (state, action: PayloadAction<FundPreview[]>) => {
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchFunds.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchFunds.fulfilled, (state, action) => {
       state.funds = action.payload;
-    },
-    setLoading: (state, action: PayloadAction<boolean>) => {
-      state.loading = action.payload;
-    },
+      state.loading = false;
+    });
+    builder.addCase(fetchFunds.rejected, (state) => {
+      state.loading = false;
+    });
   },
 });
-
-export const { addFund, setFunds, setLoading } = homeSlice.actions;
 
 export default homeSlice.reducer;

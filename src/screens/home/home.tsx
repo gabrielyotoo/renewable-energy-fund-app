@@ -1,14 +1,18 @@
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { CompositeScreenProps } from '@react-navigation/native';
+import { CompositeScreenProps, useTheme } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FlatList, TouchableOpacity, View } from 'react-native';
+import {
+  FlatList,
+  TouchableOpacity,
+  ScrollView,
+  RefreshControl,
+} from 'react-native';
 
-import { getFundsPreview } from '@app/api/home';
 import { useAppDispatch } from '@app/hooks/useAppDispatch';
 import { useAppSelector } from '@app/hooks/useAppSelector';
-import { setFunds } from '@app/redux/slices/home';
+import { fetchFunds } from '@app/redux/slices/home';
 import { HomeTabBarParamList } from '@app/routes/home-tabbar';
 import { MainStackParamList } from '@app/routes/main-navigator';
 import Banner from '@components/banner';
@@ -26,17 +30,26 @@ type HomeProps = CompositeScreenProps<
 
 const Home = ({ navigation }: HomeProps) => {
   const { t } = useTranslation();
-  const { funds } = useAppSelector((state) => state.home);
+  const { colors } = useTheme();
+  const { funds, loading } = useAppSelector((state) => state.home);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    (async () => {
-      dispatch(setFunds(await getFundsPreview()));
-    })().catch((_) => {});
+    dispatch(fetchFunds()).catch((_) => {});
   }, [dispatch]);
 
   return (
-    <View style={styles.screen}>
+    <ScrollView
+      style={styles.screen}
+      refreshControl={
+        <RefreshControl
+          refreshing={loading}
+          tintColor={colors.primary}
+          colors={[colors.primary]}
+          onRefresh={() => dispatch(fetchFunds())}
+        />
+      }
+    >
       <Text bold style={styles.funds}>
         {t('screens.home.funds')}
       </Text>
@@ -65,7 +78,7 @@ const Home = ({ navigation }: HomeProps) => {
         subtitle={t('screens.home.banner.subtitle')}
         image={<Environment width={60} height={60} />}
       />
-    </View>
+    </ScrollView>
   );
 };
 
