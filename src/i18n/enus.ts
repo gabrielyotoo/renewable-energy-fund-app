@@ -42,7 +42,7 @@ export default {
       },
       termsAgree: {
         label:
-          'I am over 18 years of age and I have read and agree to the <2>Terms of Service</2> and <4>Privacy Policy</4>.',
+          'I am over 18 years of age and I have read and agree to the <2>Terms of Service</2> and <5>Privacy Policy</5>.',
         error:
           'You must agree with terms of use and privacy policy to register',
       },
