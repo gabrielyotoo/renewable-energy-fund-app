@@ -72,5 +72,14 @@ export default {
         subtitle: 'Check out our top tips!',
       },
     },
+    fundDetails: {
+      info: 'Info & Stats',
+      AUM: 'AUM',
+      issueDate: 'Issue Date',
+      vintageRange: 'Vintage Range',
+      TER: 'TER',
+      priceAtClose: 'Price at Close',
+      priceAtOpen: 'Price at Open',
+    },
   },
 };

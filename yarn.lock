@@ -3087,6 +3087,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/luxon@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@types/luxon@npm:3.3.0"
+  checksum: f7e3a89fc3ca404fbc3ea538653ed6860bc28f570a8c4d6d24449b89b9b553b7d6ad6cc94a9e129c5b8c9a2b97f0c365b3017f811e59c4a859a9c219a1c918e0
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 20.4.2
   resolution: "@types/node@npm:20.4.2"
@@ -8331,6 +8338,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"luxon@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "luxon@npm:3.3.0"
+  checksum: 50cf17a0dc155c3dcacbeae8c0b7e80db425e0ba97b9cbdf12a7fc142d841ff1ab1560919f033af46240ed44e2f70c49f76e3422524c7fc8bb8d81ca47c66187
+  languageName: node
+  linkType: hard
+
 "make-dir@npm:^2.0.0, make-dir@npm:^2.1.0":
   version: 2.1.0
   resolution: "make-dir@npm:2.1.0"
@@ -10617,6 +10631,7 @@ __metadata:
     "@react-navigation/native-stack": ^6.9.13
     "@reduxjs/toolkit": ^1.9.5
     "@types/d3-shape": ^3.1.1
+    "@types/luxon": ^3.3.0
     "@types/react": ~18.0.14
     "@types/react-native-svg-charts": ^5.0.12
     d3-shape: ^3.2.0
@@ -10632,6 +10647,7 @@ __metadata:
     expo-splash-screen: ~0.18.2
     expo-status-bar: ~1.4.4
     i18next: ^23.2.11
+    luxon: ^3.3.0
     react: 18.2.0
     react-hook-form: ^7.45.1
     react-i18next: ^13.0.2
