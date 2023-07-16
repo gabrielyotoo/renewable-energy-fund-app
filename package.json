@@ -13,6 +13,7 @@
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
+    "d3-shape": "^3.2.0",
     "expo": "~48.0.18",
     "expo-dev-client": "~2.2.1",
     "expo-font": "~11.1.1",
@@ -25,12 +26,16 @@
     "react-i18next": "^13.0.2",
     "react-native": "0.71.8",
     "react-native-safe-area-context": "4.5.0",
-    "react-native-screens": "~3.20.0"
+    "react-native-screens": "~3.20.0",
+    "react-native-svg": "13.6.0",
+    "react-native-svg-charts": "^5.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@gabrielyotoo/eslint-config-react-native": "^1.2.0",
+    "@types/d3-shape": "^3.1.1",
     "@types/react": "~18.0.14",
+    "@types/react-native-svg-charts": "^5.0.12",
     "eslint": "^8.45.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsdoc": "^46.4.4",

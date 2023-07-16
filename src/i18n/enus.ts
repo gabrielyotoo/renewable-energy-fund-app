@@ -60,5 +60,12 @@ export default {
       register: 'Create account',
       login: 'Already have an account? <2>Log in here</2>',
     },
+    home: {
+      funds: 'Funds',
+      banner: {
+        title: 'Learn more about carbon credits',
+        subtitle: 'Check out our top tips!',
+      },
+    },
   },
 };
