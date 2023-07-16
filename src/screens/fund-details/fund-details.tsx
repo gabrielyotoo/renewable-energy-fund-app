@@ -11,6 +11,7 @@ import { useAppDispatch } from '@app/hooks/useAppDispatch';
 import { useAppSelector } from '@app/hooks/useAppSelector';
 import { fetchFundDetails } from '@app/redux/slices/fund';
 import { MainStackParamList } from '@app/routes/main-navigator';
+import FundDetailInfo from '@components/fund-detail-info';
 import Text from '@components/text';
 
 import styles from './fund-details.style';
@@ -70,45 +71,7 @@ const FundDetails = ({ route }: FundDetailsProps) => {
           strokeWidth: 2,
         }}
       />
-      <Text size="h3" bold style={styles.infoTitle}>
-        {t('screens.fundDetails.info')}
-      </Text>
-      <View style={styles.columns}>
-        <View>
-          <View style={styles.data}>
-            <Text type="ghost">{t('screens.fundDetails.AUM')}</Text>
-            <Text>{t('formatter.currency', { value: detail.aum })}</Text>
-          </View>
-          <View style={styles.data}>
-            <Text type="ghost">{t('screens.fundDetails.TER')}</Text>
-            <Text>{t('formatter.percentage', { value: detail.ter })}</Text>
-          </View>
-          <View style={styles.data}>
-            <Text type="ghost">{t('screens.fundDetails.vintageRange')}</Text>
-            <Text>
-              {DateTime.fromISO(detail.vintage).year}-{DateTime.now().year}
-            </Text>
-          </View>
-        </View>
-        <View>
-          <View style={styles.data}>
-            <Text type="ghost">{t('screens.fundDetails.issueDate')}</Text>
-            <Text>{detail.issueDate}</Text>
-          </View>
-          <View style={styles.data}>
-            <Text type="ghost">{t('screens.fundDetails.priceAtClose')}</Text>
-            <Text>
-              {t('formatter.currency', { value: detail.priceAtClose })}
-            </Text>
-          </View>
-          <View style={styles.data}>
-            <Text type="ghost">{t('screens.fundDetails.priceAtOpen')}</Text>
-            <Text>
-              {t('formatter.currency', { value: detail.priceAtOpen })}
-            </Text>
-          </View>
-        </View>
-      </View>
+      <FundDetailInfo detail={detail} />
     </ScrollView>
   );
 };

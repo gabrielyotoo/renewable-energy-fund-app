@@ -12,17 +12,4 @@ export default StyleSheet.create({
     paddingHorizontal: 25,
     marginTop: 20,
   },
-  infoTitle: {
-    paddingHorizontal: 25,
-    marginTop: 20,
-  },
-  columns: {
-    flexDirection: 'row',
-    paddingHorizontal: 25,
-    columnGap: 40,
-  },
-  data: {
-    marginVertical: 5,
-    rowGap: 5,
-  },
 });
