@@ -1,5 +1,16 @@
 /* eslint-disable max-len */
 export default {
+  formatter: {
+    currency: '{{value, currency(USD)}}',
+    percentage: '{{value, number(minimumFractionDigits: 2)}}%',
+  },
+  components: {
+    homeHeader: {
+      account: 'Account: {{value, currency(USD)}}',
+      portfolio: 'Portfolio',
+      earn: 'Earn rewards',
+    },
+  },
   screens: {
     login: {
       title: 'Login',
