@@ -6,6 +6,7 @@ import {
   ScrollView,
   TextInput as ReactNativeTextInput,
   View,
+  TouchableOpacity,
 } from 'react-native';
 
 import { MainStackParamList } from '@app/main-navigator';
@@ -22,6 +23,7 @@ const Login = ({ navigation }: LoginProps) => {
     control,
     handleSubmit,
     formState: { dirtyFields },
+    reset,
   } = useForm({
     defaultValues: {
       email: '',
@@ -35,8 +37,13 @@ const Login = ({ navigation }: LoginProps) => {
   const passwordInput = useRef<ReactNativeTextInput>(null);
 
   const handleLogin = handleSubmit(() => {
-    navigation.navigate('Home');
+    reset();
+    navigation.replace('Home');
   });
+
+  const handleSignUp = () => {
+    navigation.navigate('Register');
+  };
 
   return (
     <ScrollView
@@ -58,15 +65,11 @@ const Login = ({ navigation }: LoginProps) => {
             message: t('screens.login.email.error'),
           },
         }}
-        render={({
-          field: { onChange, onBlur, value },
-          fieldState: { error },
-        }) => (
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
           <TextInput
             label={t('screens.login.email.label')}
             placeholder={t('screens.login.email.placeholder')}
             error={error}
-            onBlur={onBlur}
             onChangeText={onChange}
             value={value}
             keyboardType="email-address"
@@ -79,16 +82,13 @@ const Login = ({ navigation }: LoginProps) => {
       />
       <Controller
         control={control}
-        rules={{
-          required: true,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
+        rules={{ required: true }}
+        render={({ field: { onChange, value } }) => (
           <TextInput
             ref={passwordInput}
             secureTextEntry={isPasswordHide}
             label={t('screens.login.password.label')}
             placeholder={t('screens.login.password.placeholder')}
-            onBlur={onBlur}
             onChangeText={onChange}
             value={value}
             textContentType="password"
@@ -104,12 +104,14 @@ const Login = ({ navigation }: LoginProps) => {
         onPress={handleLogin}
         disabled={!dirtyFields.email || !dirtyFields.password}
       />
-      <Text style={styles.noAccount}>
-        <Trans i18nKey="screens.login.noAccount">
-          Don't have an account?{' '}
-          <Text style={styles.noAccountLink}>Sign up</Text> here
-        </Trans>
-      </Text>
+      <TouchableOpacity activeOpacity={0.7} onPress={handleSignUp}>
+        <Text style={styles.noAccount}>
+          <Trans i18nKey="screens.login.noAccount">
+            Don't have an account?{' '}
+            <Text style={styles.noAccountLink}>Sign up</Text> here
+          </Trans>
+        </Text>
+      </TouchableOpacity>
       <View style={{ flex: 1 }} />
     </ScrollView>
   );
