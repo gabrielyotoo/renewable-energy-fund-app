@@ -12,11 +12,11 @@ export type HomeTabBarParamList = {
   Portfolio: undefined;
 };
 
+const TabBar = createBottomTabNavigator<HomeTabBarParamList>();
+
 const HomeNavigator = () => {
   const { colors } = useTheme();
   const { t } = useTranslation();
-
-  const TabBar = createBottomTabNavigator<HomeTabBarParamList>();
 
   return (
     <TabBar.Navigator

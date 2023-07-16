@@ -19,9 +19,9 @@ export type MainStackParamList = {
   FundDetails: { fundId: string };
 };
 
-const MainNavigator = () => {
-  const Stack = createNativeStackNavigator<MainStackParamList>();
+const Stack = createNativeStackNavigator<MainStackParamList>();
 
+const MainNavigator = () => {
   const { detail } = useAppSelector((state) => state.fund);
 
   return (
