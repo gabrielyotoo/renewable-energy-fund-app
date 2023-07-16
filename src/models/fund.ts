@@ -7,3 +7,12 @@ export interface FundPreview {
   priceChangePercentage: number;
   priceChange: number[];
 }
+
+export interface FundDetails extends FundPreview {
+  aum: number;
+  issueDate: string;
+  vintage: string;
+  ter: number;
+  priceAtClose: number;
+  priceAtOpen: number;
+}

@@ -4,8 +4,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
 
 import '@app/i18n/config';
+import { store } from '@app/redux/store';
 import MainNavigator from '@app/routes/main-navigator';
 import { mainTheme } from '@app/theme';
 
@@ -32,10 +34,12 @@ const App = () => {
 
   return (
     <SafeAreaProvider onLayout={onLayoutRootView}>
-      <StatusBar backgroundColor="transparent" translucent />
-      <NavigationContainer theme={mainTheme}>
-        <MainNavigator />
-      </NavigationContainer>
+      <Provider store={store}>
+        <StatusBar backgroundColor="transparent" translucent />
+        <NavigationContainer theme={mainTheme}>
+          <MainNavigator />
+        </NavigationContainer>
+      </Provider>
     </SafeAreaProvider>
   );
 };
