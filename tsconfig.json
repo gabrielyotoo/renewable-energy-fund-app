@@ -7,7 +7,9 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@screens/*": ["./screens/*"],
-      "@app/*": ["./*"]
+      "@app/*": ["./*"],
+      "@assets/*": ["../assets/*"]
     }
-  }
+  },
+  "exclude": ["metro.config.js"]
 }

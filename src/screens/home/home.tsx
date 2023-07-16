@@ -4,8 +4,11 @@ import { FlatList, TouchableOpacity, View } from 'react-native';
 
 import { MainStackParamList } from '@app/main-navigator';
 import { FundPreview } from '@app/models/fund';
+import Banner from '@components/banner';
 import Fund from '@components/fund';
 import Text from '@components/text';
+
+import Environment from '@assets/environment.svg';
 
 import styles from './home.style';
 
@@ -81,6 +84,12 @@ const Home = ({ navigation }: HomeProps) => {
         style={styles.fundsList}
         contentContainerStyle={styles.fundsListContainer}
         showsHorizontalScrollIndicator={false}
+      />
+      <Banner
+        style={styles.banner}
+        title={t('screens.home.banner.title')}
+        subtitle={t('screens.home.banner.subtitle')}
+        image={<Environment width={60} height={60} />}
       />
     </View>
   );

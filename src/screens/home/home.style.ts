@@ -15,4 +15,8 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     columnGap: 10,
   },
+  banner: {
+    marginHorizontal: 25,
+    marginTop: 20,
+  },
 });
