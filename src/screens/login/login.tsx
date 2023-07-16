@@ -32,7 +32,7 @@ const Login = ({ navigation }: LoginProps) => {
   });
   const { t } = useTranslation();
 
-  const [isPasswordHide, setIsPasswordHide] = useState(true);
+  const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
   const passwordInput = useRef<ReactNativeTextInput>(null);
 
@@ -86,7 +86,8 @@ const Login = ({ navigation }: LoginProps) => {
         render={({ field: { onChange, value } }) => (
           <TextInput
             ref={passwordInput}
-            secureTextEntry={isPasswordHide}
+            secureTextEntry={isPasswordHidden}
+            onPressPasswordEye={() => setIsPasswordHidden(!isPasswordHidden)}
             label={t('screens.login.password.label')}
             placeholder={t('screens.login.password.placeholder')}
             onChangeText={onChange}

@@ -42,8 +42,7 @@ const Register = ({ navigation }: RegisterProps) => {
   const emailInput = useRef<ReactNativeTextInput>(null);
   const passwordInput = useRef<ReactNativeTextInput>(null);
 
-  const [isPasswordHidden, setIsPasswordHiddenisPasswordHidden] =
-    useState(true);
+  const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
   const handleRegister = handleSubmit(() => {
     reset();
@@ -138,6 +137,7 @@ const Register = ({ navigation }: RegisterProps) => {
             label={t('screens.register.password.label')}
             placeholder={t('screens.register.password.placeholder')}
             secureTextEntry={isPasswordHidden}
+            onPressPasswordEye={() => setIsPasswordHidden(!isPasswordHidden)}
             error={error}
             value={value}
             onChangeText={onChange}
