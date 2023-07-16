@@ -10,7 +10,10 @@ const Header = ({ navigation }: NativeStackHeaderProps) => {
   const { colors } = useTheme();
 
   return (
-    <SafeAreaView edges={['top']}>
+    <SafeAreaView
+      edges={['top']}
+      style={{ backgroundColor: colors.background }}
+    >
       {navigation.canGoBack() ? (
         <View style={styles.iconContainer}>
           <TouchableNativeFeedback onPress={navigation.goBack}>

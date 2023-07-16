@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { FontSource, useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
 import { useCallback } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -31,6 +32,7 @@ const App = () => {
 
   return (
     <SafeAreaProvider onLayout={onLayoutRootView}>
+      <StatusBar backgroundColor="transparent" translucent />
       <NavigationContainer theme={mainTheme}>
         <MainNavigator />
       </NavigationContainer>

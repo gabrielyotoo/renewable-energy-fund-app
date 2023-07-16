@@ -18,7 +18,10 @@ const HomeHeader = () => {
   const { t } = useTranslation();
 
   return (
-    <SafeAreaView edges={['top']}>
+    <SafeAreaView
+      edges={['top']}
+      style={{ backgroundColor: colors.background }}
+    >
       <View style={styles.header}>
         <View style={{ ...styles.profile, backgroundColor: colors.textInput }}>
           <AntDesign name="user" size={24} color={colors.text} />
