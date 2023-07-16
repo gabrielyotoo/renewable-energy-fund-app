@@ -6,7 +6,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import styles from './header.style';
 
-const Header = ({ navigation }: NativeStackHeaderProps) => {
+type HeaderProps = NativeStackHeaderProps & {
+  children?: React.ReactNode;
+};
+
+const Header = ({ navigation, children }: HeaderProps) => {
   const { colors } = useTheme();
 
   return (
@@ -14,20 +18,23 @@ const Header = ({ navigation }: NativeStackHeaderProps) => {
       edges={['top']}
       style={{ backgroundColor: colors.background }}
     >
-      {navigation.canGoBack() ? (
-        <View style={styles.iconContainer}>
-          <TouchableNativeFeedback onPress={navigation.goBack}>
-            <Ionicons
-              style={styles.icon}
-              name="ios-arrow-back"
-              size={28}
-              color={colors.text}
-            />
-          </TouchableNativeFeedback>
-        </View>
-      ) : (
-        <View style={styles.container} />
-      )}
+      <View style={styles.header}>
+        {children}
+        {navigation.canGoBack() ? (
+          <View style={styles.iconContainer}>
+            <TouchableNativeFeedback onPress={navigation.goBack}>
+              <Ionicons
+                style={styles.icon}
+                name="ios-arrow-back"
+                size={28}
+                color={colors.text}
+              />
+            </TouchableNativeFeedback>
+          </View>
+        ) : (
+          <View style={styles.container} />
+        )}
+      </View>
 
       <View
         style={{ ...styles.separator, backgroundColor: colors.textInput }}

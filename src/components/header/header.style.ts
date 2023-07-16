@@ -1,14 +1,16 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+  header: {
+    justifyContent: 'center',
+    paddingVertical: 10,
+  },
   icon: {
-    position: 'absolute',
     paddingVertical: 30,
     paddingHorizontal: 25,
   },
   iconContainer: {
-    justifyContent: 'center',
-    paddingVertical: 30,
+    position: 'absolute',
   },
   container: {
     paddingVertical: 30,

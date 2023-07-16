@@ -9,6 +9,7 @@ export interface FundPreview {
 }
 
 export interface FundDetails extends FundPreview {
+  code: string;
   aum: number;
   issueDate: string;
   vintage: string;

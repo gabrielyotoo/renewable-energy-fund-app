@@ -1,8 +1,11 @@
 import { NavigatorScreenParams } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View } from 'react-native';
 
+import { useAppSelector } from '@app/hooks/useAppSelector';
 import Header from '@components/header';
 import HomeHeader from '@components/home-header';
+import Text from '@components/text';
 import FundDetails from '@screens/fund-details';
 import Login from '@screens/login';
 import Register from '@screens/register';
@@ -18,6 +21,8 @@ export type MainStackParamList = {
 
 const MainNavigator = () => {
   const Stack = createNativeStackNavigator<MainStackParamList>();
+
+  const { detail } = useAppSelector((state) => state.fund);
 
   return (
     <Stack.Navigator
@@ -38,7 +43,14 @@ const MainNavigator = () => {
         component={FundDetails}
         name="FundDetails"
         options={{
-          header: (props) => <Header {...props} />,
+          header: (props) => (
+            <Header {...props}>
+              <View style={{ alignItems: 'center' }}>
+                <Text bold>{detail?.name}</Text>
+                <Text type="ghost">{detail?.code}</Text>
+              </View>
+            </Header>
+          ),
         }}
       />
     </Stack.Navigator>

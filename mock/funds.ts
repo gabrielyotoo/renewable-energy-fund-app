@@ -53,6 +53,7 @@ export const mockedFundsDetails: FundDetails[] = [
     amount: 1234,
     id: '1',
     name: 'Biomass Fund',
+    code: 'BIOM',
     priceChange: [
       9, 91, 132, -77, -51, 146, 117, 146, 154, -95, -26, -63, 157, 223, 206,
       123, -2, -80, -34, 163, 117, 112, 4, -100, -38, 34, 94, 79, 107, -91, -39,
@@ -73,6 +74,7 @@ export const mockedFundsDetails: FundDetails[] = [
     amount: 53429,
     id: '2',
     name: 'Wind Fund',
+    code: 'WIND',
     priceChange: [
       205, 220, -47, 62, 112, 24, 92, 77, -79, 100, 247, -35, -68, -84, -81, 2,
       -95, 102, -53, -61, -2, 139, 31, -23, 84, 5, 219, -11, 15, 116, -48, -54,
@@ -93,6 +95,7 @@ export const mockedFundsDetails: FundDetails[] = [
     amount: 95,
     id: '3',
     name: 'Sun Fund',
+    code: 'SUNF',
     priceChange: [
       179, 27, -78, 53, 132, 102, 153, -46, 44, -56, 58, 31, 248, 126, -59, 18,
       202, -16, 61, -63, 78, -97, 216, 142, 150, -20, 54, -48, -100, 227, 220,
@@ -113,6 +116,7 @@ export const mockedFundsDetails: FundDetails[] = [
     amount: 484,
     id: '4',
     name: 'Hydroelectric Fund',
+    code: 'HYDR',
     priceChange: [
       -15, 232, 124, 132, 37, 172, 214, 202, 36, 78, -71, -48, 101, -94, 235,
       62, 91, -68, -96, 28, 33, 177, 184, -21, 39, -57, -35, 9, 108, -70, 122,
@@ -133,6 +137,7 @@ export const mockedFundsDetails: FundDetails[] = [
     amount: 865,
     id: '5',
     name: 'Geothermal Fund',
+    code: 'GEOT',
     priceChange: [
       79, -49, 30, 47, 6, -80, 168, 7, 163, 42, 68, 174, 209, 207, -96, 139,
       -36, 113, 143, -68, 69, -85, 17, -17, -10, -81, 35, 100, 165, 171, 35,
