@@ -11,6 +11,7 @@ import { useAppDispatch } from '@app/hooks/useAppDispatch';
 import { useAppSelector } from '@app/hooks/useAppSelector';
 import { fetchFundDetails } from '@app/redux/slices/fund';
 import { MainStackParamList } from '@app/routes/main-navigator';
+import FundBreakdown from '@components/fund-breakdown';
 import FundDetailInfo from '@components/fund-detail-info';
 import Text from '@components/text';
 
@@ -72,6 +73,7 @@ const FundDetails = ({ route }: FundDetailsProps) => {
         }}
       />
       <FundDetailInfo detail={detail} />
+      <FundBreakdown detail={detail} />
     </ScrollView>
   );
 };

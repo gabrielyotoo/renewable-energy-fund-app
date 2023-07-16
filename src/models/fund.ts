@@ -8,6 +8,14 @@ export interface FundPreview {
   priceChange: number[];
 }
 
+export interface FundHighlight {
+  id: string;
+  title: string;
+  imageUrl: string;
+  text: string;
+  iconUrl: string;
+}
+
 export interface FundDetails extends FundPreview {
   code: string;
   aum: number;
@@ -16,4 +24,5 @@ export interface FundDetails extends FundPreview {
   ter: number;
   priceAtClose: number;
   priceAtOpen: number;
+  highlights: FundHighlight[];
 }
