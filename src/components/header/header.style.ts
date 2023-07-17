@@ -5,12 +5,13 @@ export default StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10,
   },
-  icon: {
-    paddingVertical: 30,
-    paddingHorizontal: 25,
-  },
-  iconContainer: {
+  children: {
     position: 'absolute',
+    width: '100%',
+  },
+  icon: {
+    paddingHorizontal: 25,
+    paddingVertical: 15,
   },
   container: {
     paddingVertical: 30,

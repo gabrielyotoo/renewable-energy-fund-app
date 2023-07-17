@@ -1,35 +1,43 @@
 import { useTheme } from '@react-navigation/native';
 import {
-  View,
-  TouchableNativeFeedbackProps,
-  TouchableNativeFeedback,
+  TouchableOpacityProps,
+  TouchableOpacity,
+  TextStyle,
 } from 'react-native';
 
 import Text from '@components/text';
 
 import styles from './button.style';
 
-type ButtonProps = TouchableNativeFeedbackProps & {
+type ButtonProps = TouchableOpacityProps & {
   title: string;
+  textStyle?: TextStyle;
 };
 
-const Button = ({ title, style, disabled, ...props }: ButtonProps) => {
+const Button = ({
+  title,
+  style,
+  disabled,
+  textStyle,
+  ...props
+}: ButtonProps) => {
   const { colors } = useTheme();
 
   return (
-    <TouchableNativeFeedback {...props} disabled={disabled}>
-      <View
-        style={[
-          styles.button,
-          { backgroundColor: disabled ? colors.inactive : colors.primary },
-          style,
-        ]}
-      >
-        <Text size="h4" style={{ color: colors.textOnPrimary }}>
-          {title}
-        </Text>
-      </View>
-    </TouchableNativeFeedback>
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={[
+        styles.button,
+        { backgroundColor: disabled ? colors.inactive : colors.primary },
+        style,
+      ]}
+      {...props}
+      disabled={disabled}
+    >
+      <Text size="h4" style={[{ color: colors.textOnPrimary }, textStyle]}>
+        {title}
+      </Text>
+    </TouchableOpacity>
   );
 };
 

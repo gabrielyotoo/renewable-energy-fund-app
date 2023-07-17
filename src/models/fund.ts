@@ -21,6 +21,13 @@ export interface FundDetails extends FundPreview {
   aum: number;
   issueDate: string;
   vintage: string;
+  userPortfolio: {
+    credits: number;
+    creditsValue: number;
+    creditsAppreciation: number;
+    lastPurchase: string;
+    previousRetire: number;
+  };
   ter: number;
   priceAtClose: number;
   priceAtOpen: number;

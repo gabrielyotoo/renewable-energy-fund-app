@@ -5,7 +5,7 @@ import { FieldError } from 'react-hook-form';
 import {
   TextInput as ReactNativeTextInput,
   TextInputProps as ReactNativeTextInputProps,
-  TouchableNativeFeedback,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
@@ -63,9 +63,9 @@ const TextInput = forwardRef<ReactNativeTextInput, TextInputProps>(
             secureTextEntry={secureTextEntry}
           />
           {secureTextEntry !== undefined ? (
-            <TouchableNativeFeedback onPress={onPressPasswordEye}>
+            <TouchableOpacity activeOpacity={0.7} onPress={onPressPasswordEye}>
               {renderEye()}
-            </TouchableNativeFeedback>
+            </TouchableOpacity>
           ) : null}
         </View>
         {error ? (
