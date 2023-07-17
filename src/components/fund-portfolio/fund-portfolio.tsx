@@ -38,7 +38,7 @@ const FundPortfolio = ({ detail: { userPortfolio } }: FundPortfolioProps) => {
         <View>
           <Text bold size="h2">
             {t('screens.fundDetails.portfolio.credits', {
-              count: 10,
+              count: userPortfolio.credits,
             })}
           </Text>
           <Text
