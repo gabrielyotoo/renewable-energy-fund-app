@@ -28,7 +28,7 @@ export const mainTheme: AppTheme = {
     inactive: '#b0b0b0',
     background: '#ffffff',
     textInput: '#F4F4F4',
-    ghostedText: '#B8B8B8',
+    ghostedText: '#A0A0A0',
     texts: {
       success: '#0FDF8F',
       warn: '#F0A719',

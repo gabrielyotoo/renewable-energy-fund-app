@@ -69,6 +69,13 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 39,
     ter: 3,
     vintage: '2023-01-01',
+    userPortfolio: {
+      credits: 18,
+      creditsValue: 893.32,
+      creditsAppreciation: 30,
+      lastPurchase: '2023-02-14',
+      previousRetire: 30,
+    },
   },
   {
     amount: 53429,
@@ -90,6 +97,13 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 30,
     ter: 2,
     vintage: '2023-04-15',
+    userPortfolio: {
+      credits: 10,
+      creditsValue: 456.78,
+      creditsAppreciation: 15,
+      lastPurchase: '2023-07-10',
+      previousRetire: 25,
+    },
   },
   {
     amount: 95,
@@ -111,6 +125,13 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 48,
     ter: 4,
     vintage: '2023-02-10',
+    userPortfolio: {
+      credits: 25,
+      creditsValue: 1250.5,
+      creditsAppreciation: 40,
+      lastPurchase: '2023-07-01',
+      previousRetire: 50,
+    },
   },
   {
     amount: 484,
@@ -132,6 +153,13 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 45,
     ter: 2,
     vintage: '2023-03-20',
+    userPortfolio: {
+      credits: 15,
+      creditsValue: 789.99,
+      creditsAppreciation: 20,
+      lastPurchase: '2023-07-05',
+      previousRetire: 35,
+    },
   },
   {
     amount: 865,
@@ -152,5 +180,12 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 39,
     ter: 3,
     vintage: '2023-01-01',
+    userPortfolio: {
+      credits: 5,
+      creditsValue: 234.56,
+      creditsAppreciation: 12,
+      lastPurchase: '2023-06-22',
+      previousRetire: 20,
+    },
   },
 ];

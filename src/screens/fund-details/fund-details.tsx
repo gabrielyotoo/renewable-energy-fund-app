@@ -1,6 +1,9 @@
 /* eslint-disable security/detect-object-injection */
 import { useTheme } from '@react-navigation/native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import {
+  NativeStackNavigationProp,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 import { DateTime } from 'luxon';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -12,11 +15,17 @@ import { useAppSelector } from '@app/hooks/useAppSelector';
 import { fetchFundDetails } from '@app/redux/slices/fund';
 import { MainStackParamList } from '@app/routes/main-navigator';
 import FundDetailInfo from '@components/fund-detail-info';
+import FundPortfolio from '@components/fund-portfolio';
 import Text from '@components/text';
 
 import styles from './fund-details.style';
 
 type FundDetailsProps = NativeStackScreenProps<
+  MainStackParamList,
+  'FundDetails'
+>;
+
+export type FundDetailsNavigationProps = NativeStackNavigationProp<
   MainStackParamList,
   'FundDetails'
 >;
@@ -72,6 +81,7 @@ const FundDetails = ({ route }: FundDetailsProps) => {
         }}
       />
       <FundDetailInfo detail={detail} />
+      <FundPortfolio detail={detail} />
     </ScrollView>
   );
 };

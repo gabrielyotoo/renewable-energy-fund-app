@@ -3,6 +3,7 @@ import {
   View,
   TouchableNativeFeedbackProps,
   TouchableNativeFeedback,
+  TextStyle,
 } from 'react-native';
 
 import Text from '@components/text';
@@ -11,9 +12,16 @@ import styles from './button.style';
 
 type ButtonProps = TouchableNativeFeedbackProps & {
   title: string;
+  textStyle?: TextStyle;
 };
 
-const Button = ({ title, style, disabled, ...props }: ButtonProps) => {
+const Button = ({
+  title,
+  style,
+  disabled,
+  textStyle,
+  ...props
+}: ButtonProps) => {
   const { colors } = useTheme();
 
   return (
@@ -25,7 +33,7 @@ const Button = ({ title, style, disabled, ...props }: ButtonProps) => {
           style,
         ]}
       >
-        <Text size="h4" style={{ color: colors.textOnPrimary }}>
+        <Text size="h4" style={[{ color: colors.textOnPrimary }, textStyle]}>
           {title}
         </Text>
       </View>
