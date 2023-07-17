@@ -45,8 +45,8 @@ const Register = ({ navigation }: RegisterProps) => {
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
   const handleRegister = handleSubmit(() => {
-    reset();
     navigation.navigate('Success', { message: t('screens.register.success') });
+    reset();
   });
 
   return (
@@ -112,6 +112,7 @@ const Register = ({ navigation }: RegisterProps) => {
             placeholder={t('screens.register.email.placeholder')}
             error={error}
             value={value}
+            autoCapitalize="none"
             onChangeText={onChange}
             keyboardType="email-address"
             autoComplete="email"

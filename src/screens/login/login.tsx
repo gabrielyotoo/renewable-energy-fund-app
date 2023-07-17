@@ -74,6 +74,7 @@ const Login = ({ navigation }: LoginProps) => {
             error={error}
             onChangeText={onChange}
             value={value}
+            autoCapitalize="none"
             keyboardType="email-address"
             textContentType="emailAddress"
             returnKeyType="next"
