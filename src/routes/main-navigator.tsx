@@ -9,6 +9,7 @@ import Text from '@components/text';
 import FundDetails from '@screens/fund-details';
 import Login from '@screens/login';
 import Register from '@screens/register';
+import Success from '@screens/success';
 
 import HomeNavigator, { HomeTabBarParamList } from './home-tabbar';
 
@@ -17,6 +18,7 @@ export type MainStackParamList = {
   Register: undefined;
   HomeTabBar: NavigatorScreenParams<HomeTabBarParamList>;
   FundDetails: { fundId: string };
+  Success: { message: string };
 };
 
 const Stack = createNativeStackNavigator<MainStackParamList>();
@@ -52,6 +54,14 @@ const MainNavigator = () => {
             </Header>
           ),
         }}
+      />
+      <Stack.Screen
+        component={Success}
+        name="Success"
+        options={{
+          headerShown: false,
+        }}
+        initialParams={{ message: '' }}
       />
     </Stack.Navigator>
   );

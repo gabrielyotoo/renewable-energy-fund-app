@@ -64,6 +64,7 @@ export default {
       },
       register: 'Create account',
       login: 'Already have an account? <2>Log in here</2>',
+      success: 'Account created successfully!',
     },
     home: {
       funds: 'Funds',
@@ -104,6 +105,9 @@ export default {
           'Please note that prices are for reference only and may vary at the time of executing a buy or sell order.\n\nThe information provided is not investment advice, and should not be used as a recommendation to buy or sell your assets.',
         buy: 'Buy',
       },
+    },
+    success: {
+      continue: 'Continue',
     },
   },
 };

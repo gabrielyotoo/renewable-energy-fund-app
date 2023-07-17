@@ -46,7 +46,7 @@ const Register = ({ navigation }: RegisterProps) => {
 
   const handleRegister = handleSubmit(() => {
     reset();
-    navigation.reset({ routes: [{ name: 'HomeTabBar' }] });
+    navigation.navigate('Success', { message: t('screens.register.success') });
   });
 
   return (
