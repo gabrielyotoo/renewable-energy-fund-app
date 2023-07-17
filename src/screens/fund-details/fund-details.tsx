@@ -16,6 +16,7 @@ import { fetchFundDetails } from '@app/redux/slices/fund';
 import { MainStackParamList } from '@app/routes/main-navigator';
 import DateRange, { DateRangeOptions } from '@components/date-range';
 import FundDetailInfo from '@components/fund-detail-info';
+import FundHighlightsPreview from '@components/fund-highlights-preview';
 import FundPortfolio from '@components/fund-portfolio';
 import Text from '@components/text';
 
@@ -125,6 +126,10 @@ const FundDetails = ({ route }: FundDetailsProps) => {
         onChangeRange={setRange}
       />
       <FundDetailInfo detail={detail} />
+      <FundHighlightsPreview
+        style={styles.dateRange}
+        highlights={detail.highlights}
+      />
       <FundPortfolio detail={detail} />
     </ScrollView>
   );

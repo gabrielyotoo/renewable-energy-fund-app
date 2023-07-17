@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { FundDetails, FundPreview } from '@app/models/fund';
 
 export const mockedFundsPreviews: FundPreview[] = [
@@ -69,6 +70,24 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 39,
     ter: 3,
     vintage: '2023-01-01',
+    highlights: [
+      {
+        iconUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png',
+        id: '1',
+        imageUrl:
+          'https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus nunc ut commodo congue. Phasellus non justo consectetur, rhoncus tortor vel, suscipit tellus. ',
+      },
+      {
+        iconUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png',
+        id: '2',
+        imageUrl:
+          'https://images.pexels.com/photos/1450082/pexels-photo-1450082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus nunc ut commodo congue. Phasellus non justo consectetur, rhoncus tortor vel, suscipit tellus. ',
+      },
+    ],
     userPortfolio: {
       credits: 18,
       creditsValue: 893.32,
@@ -97,6 +116,16 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 30,
     ter: 2,
     vintage: '2023-04-15',
+    highlights: [
+      {
+        iconUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png',
+        id: '1',
+        imageUrl:
+          'https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus nunc ut commodo congue. Phasellus non justo consectetur, rhoncus tortor vel, suscipit tellus. ',
+      },
+    ],
     userPortfolio: {
       credits: 10,
       creditsValue: 456.78,
@@ -125,6 +154,24 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 48,
     ter: 4,
     vintage: '2023-02-10',
+    highlights: [
+      {
+        iconUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png',
+        id: '1',
+        imageUrl:
+          'https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus nunc ut commodo congue. Phasellus non justo consectetur, rhoncus tortor vel, suscipit tellus. ',
+      },
+      {
+        iconUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png',
+        id: '2',
+        imageUrl:
+          'https://images.pexels.com/photos/1450082/pexels-photo-1450082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus nunc ut commodo congue. Phasellus non justo consectetur, rhoncus tortor vel, suscipit tellus. ',
+      },
+    ],
     userPortfolio: {
       credits: 25,
       creditsValue: 1250.5,
@@ -153,6 +200,24 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 45,
     ter: 2,
     vintage: '2023-03-20',
+    highlights: [
+      {
+        iconUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png',
+        id: '1',
+        imageUrl:
+          'https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus nunc ut commodo congue. Phasellus non justo consectetur, rhoncus tortor vel, suscipit tellus. ',
+      },
+      {
+        iconUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png',
+        id: '2',
+        imageUrl:
+          'https://images.pexels.com/photos/1450082/pexels-photo-1450082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus nunc ut commodo congue. Phasellus non justo consectetur, rhoncus tortor vel, suscipit tellus. ',
+      },
+    ],
     userPortfolio: {
       credits: 15,
       creditsValue: 789.99,
@@ -180,6 +245,16 @@ export const mockedFundsDetails: FundDetails[] = [
     priceAtOpen: 39,
     ter: 3,
     vintage: '2023-01-01',
+    highlights: [
+      {
+        iconUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png',
+        id: '1',
+        imageUrl:
+          'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus nunc ut commodo congue. Phasellus non justo consectetur, rhoncus tortor vel, suscipit tellus. ',
+      },
+    ],
     userPortfolio: {
       credits: 1,
       creditsValue: 234.56,

@@ -15,6 +15,9 @@ export default {
       trade: 'Trade',
       portfolio: 'Portfolio',
     },
+    fundsHighlightsPreview: {
+      readMore: 'Read More',
+    },
   },
   screens: {
     login: {
