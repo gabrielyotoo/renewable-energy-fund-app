@@ -41,22 +41,17 @@ const FundDetails = ({ route }: FundDetailsProps) => {
   const dispatch = useAppDispatch();
 
   const [range, setRange] = useState<DateRangeOptions>('d');
-  const [priceChangeData, setPriceChangeData] = useState(
-    detail?.priceChange.slice(detail.priceChange.length - 14) ?? []
-  );
+  const [priceChangeData, setPriceChangeData] = useState<number[]>([]);
 
   useEffect(() => {
     dispatch(fetchFundDetails(fundId)).catch((_) => {});
   }, [dispatch, fundId]);
 
-  if (!detail) {
-    return null;
-  }
-  const priceColorType = detail.priceDifferent === 'down' ? 'error' : 'success';
-
-  const handleRangeChange = (newRange: DateRangeOptions) => {
-    setRange(newRange);
-    switch (newRange) {
+  useEffect(() => {
+    if (!detail) {
+      return;
+    }
+    switch (range) {
       case 'h':
         setPriceChangeData(
           detail.priceChange.slice(detail.priceChange.length - 5)
@@ -85,7 +80,12 @@ const FundDetails = ({ route }: FundDetailsProps) => {
       case 'all':
         setPriceChangeData(detail.priceChange);
     }
-  };
+  }, [detail, range]);
+
+  if (!detail) {
+    return null;
+  }
+  const priceColorType = detail.priceDifferent === 'down' ? 'error' : 'success';
 
   return (
     <ScrollView
@@ -122,7 +122,7 @@ const FundDetails = ({ route }: FundDetailsProps) => {
       <DateRange
         style={styles.dateRange}
         range={range}
-        onChangeRange={handleRangeChange}
+        onChangeRange={setRange}
       />
       <FundDetailInfo detail={detail} />
       <FundPortfolio detail={detail} />
