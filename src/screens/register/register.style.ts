@@ -7,7 +7,6 @@ export default StyleSheet.create({
   },
   screenContent: {
     flexGrow: 1,
-    justifyContent: 'flex-end',
   },
   title: {
     textAlign: 'center',

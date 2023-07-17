@@ -3,6 +3,7 @@ import { FontSource, useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback } from 'react';
+import { KeyboardAvoidingView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 
@@ -37,7 +38,9 @@ const App = () => {
       <Provider store={store}>
         <StatusBar backgroundColor="transparent" translucent />
         <NavigationContainer theme={mainTheme}>
-          <MainNavigator />
+          <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+            <MainNavigator />
+          </KeyboardAvoidingView>
         </NavigationContainer>
       </Provider>
     </SafeAreaProvider>
