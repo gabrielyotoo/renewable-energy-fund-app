@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '@react-navigation/native';
 import { NativeStackHeaderProps } from '@react-navigation/native-stack';
-import { TouchableNativeFeedback, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import styles from './header.style';
@@ -21,14 +21,14 @@ const Header = ({ navigation, children }: HeaderProps) => {
       <View style={styles.header}>
         <View style={styles.children}>{children}</View>
         {navigation.canGoBack() ? (
-          <TouchableNativeFeedback onPress={navigation.goBack}>
+          <Pressable onPress={navigation.goBack}>
             <Ionicons
               style={styles.icon}
               name="ios-arrow-back"
               size={28}
               color={colors.text}
             />
-          </TouchableNativeFeedback>
+          </Pressable>
         ) : (
           <View style={styles.container} />
         )}
