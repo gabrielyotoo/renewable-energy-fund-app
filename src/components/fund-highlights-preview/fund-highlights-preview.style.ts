@@ -18,7 +18,6 @@ export default StyleSheet.create({
   icon: {
     height: 30,
     maxWidth: '40%',
-    borderWidth: 1,
   },
   text: {
     marginVertical: 5,
