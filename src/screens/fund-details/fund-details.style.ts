@@ -1,6 +1,9 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
 export default StyleSheet.create({
+  loading: {
+    marginTop: 10,
+  },
   chart: {
     height: 160,
     width: Dimensions.get('window').width,

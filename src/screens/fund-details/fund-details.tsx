@@ -7,7 +7,12 @@ import {
 import { DateTime } from 'luxon';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RefreshControl, ScrollView, View } from 'react-native';
+import {
+  ActivityIndicator,
+  RefreshControl,
+  ScrollView,
+  View,
+} from 'react-native';
 import { LineChart } from 'react-native-svg-charts';
 
 import { useAppDispatch } from '@app/hooks/useAppDispatch';
@@ -84,7 +89,13 @@ const FundDetails = ({ route }: FundDetailsProps) => {
   }, [detail, range]);
 
   if (!detail) {
-    return null;
+    return (
+      <ActivityIndicator
+        style={styles.loading}
+        size={24}
+        color={colors.primary}
+      />
+    );
   }
   const priceColorType = detail.priceDifferent === 'down' ? 'error' : 'success';
 
