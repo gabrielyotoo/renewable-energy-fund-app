@@ -19,18 +19,16 @@ const Header = ({ navigation, children }: HeaderProps) => {
       style={{ backgroundColor: colors.background }}
     >
       <View style={styles.header}>
-        {children}
+        <View style={styles.children}>{children}</View>
         {navigation.canGoBack() ? (
-          <View style={styles.iconContainer}>
-            <TouchableNativeFeedback onPress={navigation.goBack}>
-              <Ionicons
-                style={styles.icon}
-                name="ios-arrow-back"
-                size={28}
-                color={colors.text}
-              />
-            </TouchableNativeFeedback>
-          </View>
+          <TouchableNativeFeedback onPress={navigation.goBack}>
+            <Ionicons
+              style={styles.icon}
+              name="ios-arrow-back"
+              size={28}
+              color={colors.text}
+            />
+          </TouchableNativeFeedback>
         ) : (
           <View style={styles.container} />
         )}
