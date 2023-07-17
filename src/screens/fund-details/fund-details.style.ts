@@ -12,4 +12,8 @@ export default StyleSheet.create({
     paddingHorizontal: 25,
     marginTop: 20,
   },
+  dateRange: {
+    paddingHorizontal: 25,
+    marginTop: 20,
+  },
 });

@@ -5,7 +5,7 @@ import {
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
 import { DateTime } from 'luxon';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RefreshControl, ScrollView, View } from 'react-native';
 import { LineChart } from 'react-native-svg-charts';
@@ -14,6 +14,7 @@ import { useAppDispatch } from '@app/hooks/useAppDispatch';
 import { useAppSelector } from '@app/hooks/useAppSelector';
 import { fetchFundDetails } from '@app/redux/slices/fund';
 import { MainStackParamList } from '@app/routes/main-navigator';
+import DateRange, { DateRangeOptions } from '@components/date-range';
 import FundDetailInfo from '@components/fund-detail-info';
 import FundPortfolio from '@components/fund-portfolio';
 import Text from '@components/text';
@@ -39,6 +40,11 @@ const FundDetails = ({ route }: FundDetailsProps) => {
   const { loading, detail } = useAppSelector((state) => state.fund);
   const dispatch = useAppDispatch();
 
+  const [range, setRange] = useState<DateRangeOptions>('d');
+  const [priceChangeData, setPriceChangeData] = useState(
+    detail?.priceChange.slice(detail.priceChange.length - 14) ?? []
+  );
+
   useEffect(() => {
     dispatch(fetchFundDetails(fundId)).catch((_) => {});
   }, [dispatch, fundId]);
@@ -47,6 +53,39 @@ const FundDetails = ({ route }: FundDetailsProps) => {
     return null;
   }
   const priceColorType = detail.priceDifferent === 'down' ? 'error' : 'success';
+
+  const handleRangeChange = (newRange: DateRangeOptions) => {
+    setRange(newRange);
+    switch (newRange) {
+      case 'h':
+        setPriceChangeData(
+          detail.priceChange.slice(detail.priceChange.length - 5)
+        );
+        break;
+      case 'd':
+        setPriceChangeData(
+          detail.priceChange.slice(detail.priceChange.length - 14)
+        );
+        break;
+      case 'w':
+        setPriceChangeData(
+          detail.priceChange.slice(detail.priceChange.length - 20)
+        );
+        break;
+      case 'm':
+        setPriceChangeData(
+          detail.priceChange.slice(detail.priceChange.length - 28)
+        );
+        break;
+      case 'y':
+        setPriceChangeData(
+          detail.priceChange.slice(detail.priceChange.length - 35)
+        );
+        break;
+      case 'all':
+        setPriceChangeData(detail.priceChange);
+    }
+  };
 
   return (
     <ScrollView
@@ -74,11 +113,16 @@ const FundDetails = ({ route }: FundDetailsProps) => {
       </View>
       <LineChart
         style={styles.chart}
-        data={detail.priceChange}
+        data={priceChangeData}
         svg={{
           stroke: colors.texts[priceColorType],
           strokeWidth: 2,
         }}
+      />
+      <DateRange
+        style={styles.dateRange}
+        range={range}
+        onChangeRange={handleRangeChange}
       />
       <FundDetailInfo detail={detail} />
       <FundPortfolio detail={detail} />

@@ -181,7 +181,7 @@ export const mockedFundsDetails: FundDetails[] = [
     ter: 3,
     vintage: '2023-01-01',
     userPortfolio: {
-      credits: 5,
+      credits: 1,
       creditsValue: 234.56,
       creditsAppreciation: 12,
       lastPurchase: '2023-06-22',
