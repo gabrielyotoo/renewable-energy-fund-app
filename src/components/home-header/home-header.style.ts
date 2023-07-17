@@ -14,13 +14,18 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  account: {},
+  account: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    columnGap: 5,
+  },
   headerBottom: {
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     paddingHorizontal: 25,
     paddingVertical: 20,
+    zIndex: -1,
   },
   portfolio: {
     flexDirection: 'row',
