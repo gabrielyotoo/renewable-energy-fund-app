@@ -10,7 +10,6 @@ export interface FundPreview {
 
 export interface FundHighlight {
   id: string;
-  title: string;
   imageUrl: string;
   text: string;
   iconUrl: string;
