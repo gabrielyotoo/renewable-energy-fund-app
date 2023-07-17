@@ -137,6 +137,9 @@ const FundDetails = ({ route }: FundDetailsProps) => {
         onChangeRange={setRange}
       />
       <FundDetailInfo detail={detail} />
+      <Text bold style={styles.dateRange} size="h3">
+        {t('screens.fundDetails.fundBreakdown.tabs.highlighted')}
+      </Text>
       <FundHighlightsPreview
         style={styles.dateRange}
         highlights={detail.highlights}

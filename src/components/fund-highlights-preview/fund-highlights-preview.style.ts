@@ -4,7 +4,7 @@ export default StyleSheet.create({
   container: {
     borderWidth: 2,
     borderRadius: 10,
-    maxWidth: Dimensions.get('window').width * 0.55,
+    maxWidth: Dimensions.get('window').width * 0.65,
     overflow: 'hidden',
   },
   image: {
