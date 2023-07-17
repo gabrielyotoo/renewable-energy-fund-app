@@ -13,7 +13,7 @@ import Animated, {
   withSpring,
   useAnimatedStyle,
 } from 'react-native-reanimated';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { hexToRGB } from '@app/utils/colors';
 import Text from '@components/text';
@@ -21,6 +21,7 @@ import Text from '@components/text';
 import styles from './home-header.style';
 
 const HomeHeader = () => {
+  const insets = useSafeAreaInsets();
   const { colors } = useTheme();
   const { t } = useTranslation();
   const headerMarginTop = useSharedValue(-90);
@@ -42,13 +43,15 @@ const HomeHeader = () => {
   }, [headerMarginTop, toggleHeader]);
 
   return (
-    <SafeAreaView
-      edges={['top']}
-      style={{ backgroundColor: colors.background }}
-    >
+    <>
       <StatusBar backgroundColor={colors.background} />
       <TouchableWithoutFeedback onPress={toggleHeader}>
-        <View style={[styles.header, { backgroundColor: colors.background }]}>
+        <View
+          style={[
+            styles.header,
+            { backgroundColor: colors.background, paddingTop: insets.top },
+          ]}
+        >
           <View
             style={{ ...styles.profile, backgroundColor: colors.textInput }}
           >
@@ -102,7 +105,7 @@ const HomeHeader = () => {
       <View
         style={{ ...styles.separator, backgroundColor: colors.textInput }}
       />
-    </SafeAreaView>
+    </>
   );
 };
 
